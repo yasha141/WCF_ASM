@@ -1,0 +1,70 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="MusicAppUWP.View.Profile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicAppUWP.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:entity="using:MusicalService.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Image x:ConnectionId='9' x:Name="myImageProfile" Width="200" Height="200"
+                   Margin="10 10 10 10"/>
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="First Name: " />
+                    <TextBlock x:ConnectionId='14' x:Name="firstName" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Last Name: " />
+                    <TextBlock x:ConnectionId='13' x:Name="lastName" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Address: " />
+                    <TextBlock x:ConnectionId='12' x:Name="address" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Phone: " />
+                    <TextBlock x:ConnectionId='11' x:Name="phone" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Email: " />
+                    <TextBlock x:ConnectionId='10' x:Name="email" Width="Auto"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock />
+
+        <ScrollViewer>
+            <ListView x:ConnectionId='3' x:Name="MyListView"                                 IsItemClickEnabled="True"
+                                              >
+                <ListView.ItemTemplate>
+                    <DataTemplate                         >
+                        <Grid x:ConnectionId='5'>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image x:ConnectionId='6' Grid.Column="0" Grid.RowSpan="2"                             Width="32"
+                    Height="32" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                            <TextBlock x:ConnectionId='7' Grid.Column="1"                      Margin="12,6,0,0" 
+                    Style="{ThemeResource BaseTextBlockStyle}"/>
+                            <TextBlock x:ConnectionId='8'  Grid.Column="1" Grid.Row="1"                        Margin="12,0,0,6" 
+                    Style="{ThemeResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+        <MediaPlayerElement x:ConnectionId='2' x:Name="MyMedia" AutoPlay="True" AreTransportControlsEnabled="True"></MediaPlayerElement>
+    </StackPanel>
+    
+    
+</Page>
+
